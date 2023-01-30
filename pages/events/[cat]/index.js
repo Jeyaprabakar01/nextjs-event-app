@@ -1,16 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const EventsCatPage = ({ data }) => {
+const EventsCatPage = ({ data, pageName }) => {
   return (
     <div>
-      <h1>Events in london </h1>
+      <h1>Events in {pageName} </h1>
 
       {data.map((ev) => (
-        <a key={ev.id} href={`/events/cat/${ev.city}/${ev.id}`}>
+        <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
           <Image src={ev.image} width={300} height={300} />
           <h1>{ev.title}</h1>
           <p>{ev.description}</p>
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -42,6 +43,6 @@ export async function getStaticProps(context) {
   const data = allEvents.filter((ev) => ev.city === id);
 
   return {
-    props: { data },
+    props: { data, pageName: id },
   };
 }

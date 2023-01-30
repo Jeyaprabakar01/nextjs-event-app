@@ -1,9 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export default function Home({ data }) {
   return (
@@ -18,19 +16,19 @@ export default function Home({ data }) {
       <header>
         <nav>
           <img />
-          <a href="/">Home</a>
-          <a href="/about-us">About Us</a>
-          <a href="/events">Events</a>
+          <Link href="/">Home</Link>
+          <Link href="/about-us">About Us</Link>
+          <Link href="/events">Events</Link>
         </nav>
       </header>
 
       <main className={styles.main}>
         {data.map((ev) => (
-          <a keu={ev.id} href={`/events/${ev.id}/`}>
+          <Link key={ev.id} href={`/events/${ev.id}/`}>
             <Image src={ev.image} alt="" width={200} height={100} />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
-          </a>
+          </Link>
         ))}
       </main>
 
