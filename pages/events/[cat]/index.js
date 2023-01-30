@@ -8,7 +8,7 @@ const EventsCatPage = ({ data, pageName }) => {
 
       {data.map((ev) => (
         <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
-          <Image src={ev.image} width={300} height={300} />
+          <Image src={ev.image} alt="" width={300} height={300} />
           <h1>{ev.title}</h1>
           <p>{ev.description}</p>
         </Link>
