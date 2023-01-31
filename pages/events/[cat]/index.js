@@ -3,16 +3,17 @@ import Link from "next/link";
 
 const EventsCatPage = ({ data, pageName }) => {
   return (
-    <div>
-      <h1>Events in {pageName} </h1>
+    <div className="p-10 flex flex-col items-center gap-4 ">
+      <h1 className="text-center text-3xl font-bold">Events in {pageName} </h1>
 
-      {data.map((ev) => (
-        <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
-          <Image src={ev.image} alt="" width={300} height={300} />
-          <h1>{ev.title}</h1>
-          <p>{ev.description}</p>
-        </Link>
-      ))}
+      <div className="flex flex-col items-center content-center text-center text-lg font-semibold	gap-6 ">
+        {data.map((ev) => (
+          <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
+            <h1>{ev.title}</h1>
+            <Image src={ev.image} alt="" width={300} height={300} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
