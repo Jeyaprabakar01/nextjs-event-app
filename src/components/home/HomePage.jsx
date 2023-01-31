@@ -3,15 +3,22 @@ import Link from "next/link";
 
 const HomePage = ({ data }) => {
   return (
-    <main className="">
+    <div className="flex flex-col gap-7">
       {data.map((ev) => (
-        <Link key={ev.id} href={`/events/${ev.id}/`}>
-          <Image src={ev.image} alt="" width={200} height={100} />
-          <h2>{ev.title}</h2>
-          <p>{ev.description}</p>
+        <Link
+          className="flex flex-row gap-7 justify-center content-center items-center "
+          key={ev.id}
+          href={`/events/${ev.id}/`}
+        >
+          <Image src={ev.image} alt="" width={200} height={200} />
+
+          <div className="w-6/12">
+            <h2 className="font-bold text-2xl">{ev.title}</h2>
+            <p>{ev.description}</p>
+          </div>
         </Link>
       ))}
-    </main>
+    </div>
   );
 };
 

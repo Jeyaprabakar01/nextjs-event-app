@@ -5,7 +5,8 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <main className="w-full  px-7  py-12">{children}</main>
+
       <Footer />
     </>
   );
