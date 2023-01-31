@@ -1,6 +1,6 @@
 const AboutUsPage = () => {
   return (
-    <div className="p-10 ">
+    <div className="p-10 flex flex-col items-center gap-4 ">
       <h1 className="font-bold text-3xl text-center">About Us </h1>
       <p className="text-justify font-normal">
         Contrary to popular belief, Lorem Ipsum is not simply random text. It

@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const EventsPage = ({ data }) => {
   return (
-    <div>
-      <h1>Events page</h1>
-      <div>
+    <div className="p-10 flex flex-col items-center gap-4">
+      <h1 className="text-center text-3xl font-bold">All Events</h1>
+      <div className="flex flex-col items-center content-center text-center text-lg font-semibold	gap-6">
         {data.map((ev) => (
           <Link key={ev.id} href={`/events/${ev.id}/`}>
-            <Image src={ev.image} alt="" width={200} height={200} />
             <h2>{ev.title}</h2>
+            <Image src={ev.image} alt="" width={400} height={400} />
           </Link>
         ))}
       </div>
