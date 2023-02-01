@@ -5,8 +5,7 @@ const EventPage = ({ data }) => {
     <div className="p-10 flex flex-col items-center gap-4">
       <h1 className="text-center text-3xl font-bold">{data.title}</h1>
       <Image src={data.image} alt="" height={600} width={600} />
-
-      <p>{data.description} </p>
+      <p className="text-center">{data.description} </p>
     </div>
   );
 };
